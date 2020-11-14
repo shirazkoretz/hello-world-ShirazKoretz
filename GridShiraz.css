@@ -1,0 +1,30 @@
+body{
+    background-color: lightskyblue;
+    font-family:  Tahoma;
+}
+.header{
+     grid-area: header;
+     background-color: rgb(144, 198, 231);
+    }
+.menu{ grid-area: menu;background-color: rgb(144, 198, 231);}
+.main{ grid-area: main;background-color: rgb(144, 198, 231);}
+.left{ grid-area: left;background-color: rgb(144, 198, 231);}
+.footer{ grid-area: footer;background-color: rgb(144, 198, 231);}
+
+
+
+
+.Grid-containers{
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-template-rows: 100px 150px 200px 200px 100px ;
+    grid-template-areas: 
+    'header header header header header'
+    'menu menu menu menu menu'
+    'left left main main main'
+    'left left main main main'
+    'footer footer footer footer footer';
+    grid-gap: 10px;
+    padding:10 px;
+}
+
