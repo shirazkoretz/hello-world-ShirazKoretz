@@ -1,30 +1,72 @@
+*{margin:0 ; padding:0; box-sizing: border-box;}
+
 body{
-    background-color: lightskyblue;
-    font-family:  Tahoma;
+    background-image: url(sea.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: tahoma;
 }
-.header{
-     grid-area: header;
-     background-color: rgb(144, 198, 231);
-    }
-.menu{ grid-area: menu;background-color: rgb(144, 198, 231);}
-.main{ grid-area: main;background-color: rgb(144, 198, 231);}
-.left{ grid-area: left;background-color: rgb(144, 198, 231);}
-.footer{ grid-area: footer;background-color: rgb(144, 198, 231);}
-
-
-
 
 .Grid-containers{
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
-    grid-template-rows: 100px 150px 200px 200px 100px ;
+    height: 100%;
+    
     grid-template-areas: 
     'header header header header header'
     'menu menu menu menu menu'
-    'left left main main main'
-    'left left main main main'
+    'Contant Contant Contant Contant Contant'
+    'Contant Contant Contant Contant Contant'
+    'Contant Contant Contant Contant Contant'
+    'Contant Contant Contant Contant Contant'
+    'Contant Contant Contant Contant Contant'
     'footer footer footer footer footer';
     grid-gap: 10px;
     padding:10 px;
 }
+.navbar {
+  width: 100%;
+  background-color: rgba(109, 107, 107, 0.945);
+  overflow: auto;
+}
+
+.navbar a {
+  float: left;
+  padding: 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background-color: rgb(99, 138, 190);
+}
+
+.active {
+  background-color: #08456d;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+
+.header{
+     grid-area: header;
+     background-color: lightblue;
+    }
+.menu{ grid-area: menu;}
+.Contant{ grid-area: Contant }
+.footer{ 
+    grid-area: footer;
+    width: 100%;
+  background-color: rgba(109, 107, 107, 0.945);
+  overflow: auto;
+}
+
+
+
+
+
 
