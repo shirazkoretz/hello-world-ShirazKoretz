@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+    <head>
+        <title> Contact Shiraz Koretz via Email</title>
+       <link rel="stylesheet" href="{{ url_for('static', filename='css/CVmyStyle.css' )}}">
+        
+        
+    </head>
+    <body>
+      
+        <form >
+            <div class="details">
+            <p style= font-size:25px> <b>Please fill up this form and I will contact you soon </b></p>
+            <fieldset class="fieldSet">
+                
+            <label for="Fullname"><b>Full Name</b></label>
+            <input class="input" type="text" id="Fullname" name="Fullname" > 
+            <br>
+            <br>
+            <label for="email"><b>Email</b></label>
+            <input class="input" type="email" id="email" name= "email">
+            <br>
+            <br>
+            <label for="phonenumber"><b>Phone Number</b> </label>
+            <input class="input" type="text" id="phonenumber" name="phonenumber">
+            <br>
+            <br>
+            <label for="reasonToContact"><b>Reason to contact me</b></label>
+            <select  class="input" id="reasonToContact" name="reasonToContact">
+                <option value="jobOffer">Offer me a job</option>
+                <option value="personalContact">Personal Contact</option>
+                <option value="websiteimprovment">web-site improvment</option>
+              </select>
+              <br>
+              <br>
+              <label for="comments"><b>Additional comments</b></label>
+              <textarea id="comments" name="comments" cols="100" rows="3">
+
+              </textarea>
+              <br>
+              <br>
+              <input class="button" type="submit" name="submit" onclick="alert('Thank you for submitting the form')"  >
+            </fieldset>
+              <br>
+              <br>
+             
+ 
+        </form>
+    </div>
+
+    </body>
+
+
+
+</html>
