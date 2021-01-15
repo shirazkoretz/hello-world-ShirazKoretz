@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My hobbies page</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/CVmyStyle.css' )}}">
+
+
+
+</head>
+<body>
+{% include('header.html') %}
+<h1> Welcome to my hobbies page</h1>
+{%  if user %}
+<h2> before i tell you about my hobbie is here a little info about me</h2>
+<h3> My Name:</h3>
+<h4 class="{% if user.gender =='girl' %} girl {% else %} boy {% endif %}"> {{ user.Salutation|upper }} {{ user.firstName }} {{ user.lastName }} </h4>
+{% block movie_list %}
+<h3> Hobbies:</h3>
+<ul>
+    {% for hobby in hobbies %}
+    <li> {{ hobby }}</li>
+    {% endfor %}
+</ul>
+
+<h4> Degree: {{ degree[0] }}</h4>
+{% endblock %}
+{% else %}
+
+<h3> You need to be a member to log in</h3>
+{% endif %}
+</body>
+</html>

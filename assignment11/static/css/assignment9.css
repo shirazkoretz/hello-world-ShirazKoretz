@@ -1,0 +1,57 @@
+*{ /* assigning a font family and box size to the whole page  */
+  box-sizing: border-box;
+  font-family:'Amatic SC';
+    background-color: lightgray;
+
+    }
+
+
+body { /* Style of the body of the page   */
+    background-color: lightgray;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+
+ input,
+    label {/* Style of the labels, input and textarea of the form    */
+        margin: .4rem 0;
+        border-radius: 25px;
+        box-shadow: 0 15px 4px rgba(0,0,0,0.06);
+        width: 250px;
+        height: 30px;
+        color: black;
+        font-size: medium;
+        font-weight: bold;
+        display: block;
+    }
+  .button { /* style the button of the send : */
+      border: none;
+      border-radius: 25px;
+      background: rgba(163, 154, 154, 0.925);
+      box-shadow: 0 15px 4px rgba(0,0,0,0.06);
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 23px;
+      font-weight: bold;
+     }
+/* this is for the back to hme link*/
+  .a{
+      border: none;
+      border-radius: 25px;
+      background: rgba(163, 154, 154, 0.925);
+      box-shadow: 0 15px 4px rgba(0,0,0,0.06);
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 23px;
+      font-weight: bold;
+  }
+  .fieldSet{ /* Style of the fieldset of the form- (the container of the form)   */
+  border-radius: 5px;
+      width: 250px;
+      box-shadow: 0 15px 4px rgba(0,0,0,0.06);
+      border: 3px solid rgb(10, 10, 10);
+
+  }

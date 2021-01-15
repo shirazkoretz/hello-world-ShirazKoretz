@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>assingment10</title>
+    <link rel="Stylesheet" href="{{ url_for('static', filename='css/assignment9.css')}}">
+</head>
+<body>
+    <div class="insertUsers">
+        <form class="insert_form" action="/insert" method="POST">
+            <fieldset class="fieldSet">
+                <h3> Insert to following information to add a user:</h3>
+                <label class="label" for="id">User Id</label>
+                <input class="input" type="text" id="id" name="id">
+                <label class="label" for="firstname">First Name</label>
+                <input class="input" type="text" id="firstname" name="firstname">
+                <label class="label" for="lastname">Last Name</label>
+                <input class="input" type="text" id="lastname" name="lastname">
+                <label class="label" for="email">Email</label>
+                <input class="input" type="email" id="email" name="email">
+                <button class='button' type="submit" class="button" onclick="alert('A new user was created')">Insert</button>
+
+
+            </fieldset>
+        </form>
+    </div>
+<br>
+    <br>
+    <div class="updateusers">
+        <form class="update_form" action="/update" method="POST">
+            <fieldset class="fieldSet">
+                <h3> Insert information to update the user:</h3>
+                <label class="label" for="id">User Id</label>
+                <input class="input" type="text" id="id" name="id">
+                <label class="label" for="firstname">First Name</label>
+                <input class="input" type="text" id="firstname" name="firstname">
+                <label class="label" for="lastname">Last Name</label>
+                <input class="input" type="text" id="lastname" name="lastname">
+                <label class="label" for="email">Email</label>
+                <input class="input" type="email" id="email" name="email">
+                <button class='button' type="submit" class="button" onclick="alert('The user was updated')">Update user</button>
+
+
+            </fieldset>
+        </form>
+    </div>
+    <br>
+    <br>
+    <div class="Delete" >
+              <form  class="delete_form" action="/delete_user" method="GET">
+                <fieldset class="fieldSet">
+                    <h3>Insert a user id to delete: </h3>
+                    <label class="label" for="id">User Id</label>
+                    <input class="input" type="text" id="id" name="id">
+                     <button class='button' type="submit" class="button" onclick="alert('The user was deleted')">Delete</button>
+                </fieldset>
+              </form>
+    </div>
+<br>
+    <br>
+
+
+
+
+    <h2> Here is the list of all the users:</h2>
+    <ul>
+        {% if users %}
+            {% for user in users %}
+                <li>
+                    <h4> {{ user.id }} : <b> {{ user.first_name }}</b> <b> {{ user.last_name }}</b> ({{ user.email }}) </h4>
+                </li>
+
+
+            {% endfor %}
+        {% endif %}
+
+    </ul>
+
+<br>
+<br>
+  <a class="a" href="{{ url_for('home_page') }}">back to Home page</a>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment9</title>
+     <link rel="Stylesheet" href="{{ url_for('static', filename='css/assignment9.css')}}">
+
+</head>
+<body>
+
+
+        <form action="/assignment9" method="GET" class="form_search">
+            <fieldset class="fieldSet">
+            <h2> Search Form:</h2>
+            <label for="name" class="label">Name:</label>
+             <input id="name" type="text" name="name" value="" class="input"></br>
+                </br>
+                <input type="submit" class="button" value="Send" > <br>
+            </fieldset>
+        </form>
+
+     {%  if username and userslist %}
+         <h3> This is the list of users:</h3>
+         {% for user in userslist %}
+            {% if username == user.first_name  %}
+                 <h4> user information: {{ user.first_name }} {{ user.last_name }} , Email: {{ user.email }}</h4>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+
+    {% if  userslist and not username%}
+        <h3> This is the list of users:</h3>
+        {% for user in userslist %}
+             <h4> Full Name: {{ user.first_name }} {{ user.last_name }} </h4>
+        {% endfor %}
+    {% endif %}
+
+    {% if  session.get('logged_in') %}
+        <h2 class="username"> Welcome, {{ session.get('username') }}</h2>
+        <br>
+        <br>
+        <form action="/logout" method="POST">  <button type="submit" class="button" >Click here to logout</button></form>
+    {% else %}
+        <br>
+        <div id="Register">
+        <form action="/assignment9" method="POST" class="form_register" >
+        <fieldset class="fieldSet">
+         <h2> Register</h2>
+         </br><label for="username" class="label">User Name:</label>
+        <input id="username" type="text" name="username" value=""  class="input"></br>
+         </br><label for="password" class="label">Your Password:</label>
+         <input id= "password" type="password" name="password" value="" class="input">
+        </br>
+         </br>
+         <button class='button' formmethod="POST"  type="submit" class="button">Submit</button>
+        </fieldset>
+        </form>
+        </div>
+        <br>
+    {% endif %}
+<br>
+<br>
+  <a class="a" href="{{ url_for('home_page') }}">back to Home page</a>
+</body>
+</html>

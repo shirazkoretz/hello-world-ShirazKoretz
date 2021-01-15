@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shiraz Koretz CV page </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/CVmyStyle.css' )}}">
+    <link href='https://fonts.googleapis.com/css?family=Tahoma' rel='stylesheet'>
+    
+</head>
+<body>
+         {% if session.get('logged_in') %}
+             <h4> Logged in as: {{ session.get('username') }}</h4>
+             <br>
+             <form action="/logout" method="POST">  <button type="submit" class="button" >Click here to logout</button></form>
+         {% endif %}
+    <div class="gridContainer">
+        <script src="{{ url_for('static', filename='JS/ShirazCV.js') }}"></script>
+        
+        <div class="item1">Shiraz Koretz CV</div>
+            <div class="item2" >
+                
+                <ul>
+                    <a id="home" href="{{ url_for('home_page') }}" style= "background-color: rgb(226, 67, 173);"><u>Home</u></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a id="about" href=#About onclick="changeToAboutMe()" ><u>About Me</u></a>&nbsp; &nbsp;	&nbsp;&nbsp;&nbsp;
+                    <a  id="education" href=#education onclick="changeToEducation()"><u>Education</u></a>&nbsp; &nbsp;	&nbsp;&nbsp;&nbsp;
+                    <a id="profsessional" href="#profsessional" onclick="changeToExperiance()"><u>Professional Experiance</u></a>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a id="hobbies" href="{{ url_for('assignement8_fun') }}" target="_blank" ><u>Hobbies</u></a>&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+                    <a id="fullresuma" href="{{ url_for('static',filename='Images/Shiraz Koretz resume.pdf') }}" target="_blank"><u>Full Resume</u></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a id="contactme" href="{{ url_for('contact_me') }}" target="_blank" style="border:3px solid #333131"
+                     onmouseover="mouseOver()" onmouseout="mouseOut()" ><u>Contact Me</u>
+                    </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <style>a{color:rgb(77, 76, 76)}</style>				
+                </ul>
+            </div>
+            <div class="item3">
+              <p class="conentpara">
+                <h1 id="mainheader">About me</h1> 
+                  <h2 id="conpar">
+                    My name is Shiraz Koretz <br>
+                 I'm a third year student at "Ben-Gurion University", <br>
+                   I am studying Infomation System Management<br>
+                   I am a motivated person who want to find a job in this field
+                  </h2>
+                </p>
+              </div>
+
+              <div class="item4">
+                <img class= "picture" src="{{ url_for('static', filename='Images/mypicture.jpeg' )}}" alt="shiraz picture" width="300" height="300" >
+
+              </div>
+
+              <div class="item5">
+                <br>
+                <br>
+               <a href="https://www.facebook.com/shiraz.koretz/" target="_blank">
+                  <img  alt="facebooklogo" src="{{ url_for('static', filename='Images/Facebook.png' )}}"  width="40" height="40" style="border: 3px solid black; border-radius: 5px;">
+                  </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                  <a href="https://www.linkedin.com/in/shiraz-koretz-b8416a198/" target="_blank">
+                    <img  alt="facebooklogo" src="{{ url_for('static', filename='Images/linkedin.png' )}}"  width="40" height="40" style="border: 3px solid black; border-radius: 5px;">
+                    </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    <a href="{{ url_for('contact_list') }}"target="_blank" > My Contact List</a>
+
+                  <a href="{{ url_for('assignment9_fun')}}"target="_blank">      Assignment 9</a>
+                   <a href="{{ url_for('assignment10.allusers')}}"target="_blank">      Assignment 10</a>
+                  <a href="{{ url_for('get_users')}}" target="_blank"> Assignment11/users</a>
+                  <a href="{{ url_for('get_a_users')}}" target="_blank"> Assignment11/users/id</a>
+
+    </div>
+   
+
+</div>
+</body>
+
+
+
+</html>
